@@ -11,7 +11,7 @@
   <body>
     <header>
       <nav>
-        <ul class="menu-bar">
+        <ul>
           <li>
             <a href="#quan-ly-nhan-vien" class="tab-link">Quản Lý Nhân Viên</a>
           </li>
@@ -25,126 +25,263 @@
         </ul>
       </nav>
     </header>
-    <section id="quan-ly-nhan-vien" class="hidden">
-      <h2>Quản Lý Nhân Viên</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>STT</th>
-            <th>Tên Nhân Viên</th>
-            <th>Chức Vụ</th>
-            <th>Email</th>
-            <th>Số Điện Thoại</th>
-            <th>Tình Trạng</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>Nguyễn Văn A</td>
-            <td>Quản Lý</td>
-            <td>nguyenvana@gmail.com</td>
-            <td>0123456789</td>
-            <td>Hoạt động</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Nguyễn Văn B</td>
-            <td>Nhân Viên</td>
-            <td>nguyenvanb@gmail.com</td>
-            <td>0123456789</td>
-            <td>Hoạt động</td>
-          </tr>
-        </tbody>
-      </table>
-      <div class="btn-group">
-        <button class="btn btn-primary" id="btn-add-nhan-vien">Thêm</button>
-        <button class="btn btn-success" id="btn-edit-nhan-vien">Sửa</button>
-        <button class="btn btn-danger" id="btn-delete-nhan-vien">Xóa</button>
-      </div>
-    </section>
-    <section id="doanh-thu" class="hidden">
-      <!-- nội dung của section doanh thu -->
-      <h2>Doanh Thu</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>STT</th>
-            <th>Ngày</th>
-            <th>Doanh Thu</th>
-            <th>Tổng Doanh Thu</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>2023-03-01</td>
-            <td>100.000.000</td>
-            <td>500.000.000</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>2023-03-02</td>
-            <td>200.000.000</td>
-            <td>700.000.000</td>
-          </tr>
-        </tbody>
-      </table>
-      <div class="btn-group">
-        <button class="btn btn-primary" id="btn-add-doanh-thu">Thêm</button>
-        <button class="btn btn-success" id="btn-edit-doanh-thu">Sửa</button>
-        <button class="btn btn-danger" id="btn-delete-doanh-thu">Xóa</button>
-      </div>
-    </section>
+    <main>
+      <section id="quan-ly-nhan-vien" class="hidden">
+        <h2>Quản Lý Nhân Viên</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>STT</th>
+              <th>Mã Nhân Viên</th>
+              <th>Họ Tên</th>
+              <th>Ngày Sinh</th>
+              <th>Địa Chỉ</th>
+              <th>Số Điện Thoại</th>
+              <th>CCCD</th>
+              <th>Chức Vụ</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>NV001</td>
+              <td>Nguyễn Văn A</td>
+              <td>1990-01-01</td>
+              <td>Hà Nội</td>
+              <td>0123456789</td>
+              <td>123456789012</td>
+              <td>Quản Lý</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>NV002</td>
+              <td>Nguyễn Văn B</td>
+              <td>1992-05-12</td>
+              <td>Hải Phòng</td>
+              <td>0987654321</td>
+              <td>987654321098</td>
+              <td>Nhân Viên</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="btn-group">
+          <button class="btn btn-primary" id="btn-add-nhan-vien">Thêm</button>
+          <button class="btn btn-success" id="btn-edit-nhan-vien">Sửa</button>
+          <button class="btn btn-danger" id="btn-delete-nhan-vien">Xóa</button>
+        </div>
+      </section>
+      <!-- Màn hình mờ -->
+      <div id="overlay" class="hidden"></div>
 
-    <section id="danh-gia-khach-hang" class="hidden">
-      <!-- nội dung của section đánh giá khách hàng -->
-      <h2>Đánh Giá Của Khách Hàng</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>STT</th>
-            <th>Tên Khách Hàng</th>
-            <th>Đánh Giá</th>
-            <th>Bình Luận</th>
-            <th>Ngày Đánh Giá</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>Nguyễn Văn C</td>
-            <td>5 sao</td>
-            <td>Rất hài lòng</td>
-            <td>2023-03-01</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Nguyễn Văn D</td>
-            <td>4 sao</td>
-            <td>Tốt</td>
-            <td>2023-03-02</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Nguyễn Văn f</td>
-            <td>4 sao</td>
-            <td>Tốt</td>
-            <td>2023-03-09</td>
-          </tr>
-        </tbody>
-      </table>
-      <div class="btn-group">
-        <button class="btn btn-primary" id="btn-add-danh-gia-khach-hang">
-          Thêm
-        </button>
-        <button class="btn btn-success" id="btn-edit-danh-gia-khach-hang">
-          Sửa
-        </button>
-        <button class="btn btn-danger" id="btn-delete-danh-gia-khach-hang">
-          Xóa
-        </button>
+      <!-- Hộp thoại chỉnh sửa -->
+      <div id="edit-dialog" class="hidden">
+        <h3>Chỉnh sửa thông tin</h3>
+        <form id="edit-form">
+          <label for="edit-ma-nv">Mã Nhân Viên:</label>
+          <input type="text" id="edit-ma-nv" readonly />
+
+          <label for="edit-ho-ten">Họ Tên:</label>
+          <input type="text" id="edit-ho-ten" />
+
+          <label for="edit-ngay-sinh">Ngày Sinh:</label>
+          <input type="date" id="edit-ngay-sinh" />
+
+          <label for="edit-dia-chi">Địa Chỉ:</label>
+          <input type="text" id="edit-dia-chi" />
+
+          <label for="edit-sdt">Số Điện Thoại:</label>
+          <input type="text" id="edit-sdt" />
+
+          <label for="edit-cccd">CCCD:</label>
+          <input type="text" id="edit-cccd" />
+
+          <label for="edit-chuc-vu">Chức Vụ:</label>
+          <input type="text" id="edit-chuc-vu" />
+
+          <div class="btn-group">
+            <button type="button" id="btn-save" class="btn btn-primary">
+              Lưu
+            </button>
+            <button type="button" id="btn-cancel" class="btn btn-danger">
+              Hủy
+            </button>
+          </div>
+        </form>
       </div>
-    </section>
+
+      <section id="doanh-thu" class="hidden">
+        <h2>Quản Lý Doanh Thu</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>STT</th>
+              <th>ID Hóa Đơn</th>
+              <th>ID Khách Hàng</th>
+              <th>ID Nhân Viên</th>
+              <th>ID Chi Tiết Hóa Đơn</th>
+              <th>ID Order</th>
+              <th>Chiết Khấu</th>
+              <th>Thành Tiền</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>HD001</td>
+              <td>KH001</td>
+              <td>NV001</td>
+              <td>CTHD001</td>
+              <td>ORD001</td>
+              <td>10%</td>
+              <td>900,000 VND</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>HD002</td>
+              <td>KH002</td>
+              <td>NV002</td>
+              <td>CTHD002</td>
+              <td>ORD002</td>
+              <td>5%</td>
+              <td>950,000 VND</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>HD003</td>
+              <td>KH003</td>
+              <td>NV003</td>
+              <td>CTHD003</td>
+              <td>ORD003</td>
+              <td>0%</td>
+              <td>1,000,000 VND</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="btn-group">
+          <button class="btn btn-primary" id="btn-add-doanh-thu">Thêm</button>
+          <button class="btn btn-success" id="btn-edit-doanh-thu">Sửa</button>
+          <button class="btn btn-danger" id="btn-delete-doanh-thu">Xóa</button>
+        </div>
+      </section>
+      <!-- Hộp thoại sửa -->
+      <div id="edit-dialog" class="dialog hidden">
+        <h3>Sửa Doanh Thu</h3>
+        <form id="edit-form">
+          <label for="edit-id-hoadon">ID Hóa Đơn</label>
+          <input type="text" id="edit-id-hoadon" name="id-hoadon" readonly />
+
+          <label for="edit-id-khachhang">ID Khách Hàng</label>
+          <input type="text" id="edit-id-khachhang" name="id-khachhang" />
+
+          <label for="edit-id-nhanvien">ID Nhân Viên</label>
+          <input type="text" id="edit-id-nhanvien" name="id-nhanvien" />
+
+          <label for="edit-id-cthoadon">ID Chi Tiết Hóa Đơn</label>
+          <input type="text" id="edit-id-cthoadon" name="id-cthoadon" />
+
+          <label for="edit-id-order">ID Order</label>
+          <input type="text" id="edit-id-order" name="id-order" />
+
+          <label for="edit-chietkhau">Chiết Khấu</label>
+          <input type="text" id="edit-chietkhau" name="chietkhau" />
+
+          <label for="edit-thanhtien">Thành Tiền</label>
+          <input type="text" id="edit-thanhtien" name="thanhtien" />
+
+          <button type="button" id="btn-save-edit">Lưu</button>
+          <button type="button" id="btn-cancel">Hủy</button>
+        </form>
+      </div>
+
+      <div id="overlay" class="overlay hidden"></div>
+
+      <section id="danh-gia-khach-hang" class="hidden">
+        <h2>Đánh Giá Của Khách Hàng</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>STT</th>
+              <th>ID Khách Hàng</th>
+              <th>ID Đánh Giá</th>
+              <th>ID Hóa Đơn</th>
+              <th>Điểm Đánh Giá</th>
+              <th>Bình Luận</th>
+              <th>Ngày</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>KH001</td>
+              <td>DG001</td>
+              <td>HD001</td>
+              <td>5</td>
+              <td>Rất hài lòng</td>
+              <td>2023-03-01</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>KH002</td>
+              <td>DG002</td>
+              <td>HD002</td>
+              <td>4</td>
+              <td>Tốt</td>
+              <td>2023-03-02</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>KH003</td>
+              <td>DG003</td>
+              <td>HD003</td>
+              <td>3</td>
+              <td>Bình thường</td>
+              <td>2023-03-03</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="btn-group">
+          <button class="btn btn-primary" id="btn-add-danh-gia-khach-hang">
+            Thêm
+          </button>
+          <button class="btn btn-success" id="btn-edit-danh-gia-khach-hang">
+            Sửa
+          </button>
+          <button class="btn btn-danger" id="btn-delete-danh-gia-khach-hang">
+            Xóa
+          </button>
+        </div>
+      </section>
+      <!-- Hộp thoại sửa Đánh Giá Khách Hàng -->
+      <div id="edit-danhgia-dialog" class="hidden">
+        <h3>Sửa Đánh Giá Khách Hàng</h3>
+        <form id="edit-danhgia-form">
+          <label for="id-khachhang">ID Khách Hàng</label>
+          <input type="text" id="id-khachhang" name="id-khachhang" required />
+
+          <label for="id-danhgia">ID Đánh Giá</label>
+          <input type="text" id="id-danhgia" name="id-danhgia" required />
+
+          <label for="id-hoadon">ID Hóa Đơn</label>
+          <input type="text" id="id-hoadon" name="id-hoadon" required />
+
+          <label for="diem-danhgia">Điểm Đánh Giá</label>
+          <input type="number" id="diem-danhgia" name="diem-danhgia" required />
+
+          <label for="binhluan">Bình Luận</label>
+          <textarea id="binhluan" name="binhluan" required></textarea>
+
+          <label for="ngay">Ngày</label>
+          <input type="date" id="ngay" name="ngay" required />
+
+          <button type="submit" class="btn btn-success">Lưu</button>
+          <button type="button" class="btn btn-danger" id="cancel-edit-danhgia">
+            Hủy
+          </button>
+        </form>
+      </div>
+
+      <!-- Overlay -->
+      <div id="overlay"></div>
+    </main>
   </body>
 </html>

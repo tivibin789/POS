@@ -3,17 +3,56 @@ body {
   margin: 0;
   padding: 0;
   background-color: #f4f4f4;
+  display: flex; /* Sử dụng flexbox để chia layout */
 }
+
 header {
-  display: inline;
-}
-header nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
+  width: 20%; /* Thanh điều hướng chiếm 20% màn hình */
   background-color: gold;
+  height: 100vh; /* Chiều cao 100% màn hình */
+  position: fixed; /* Cố định thanh điều hướng */
+  top: 0;
+  left: 0;
+  padding: 20px 0; /* Thêm khoảng cách */
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Hiệu ứng đổ bóng */
 }
+
+header nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex; /* Sử dụng Flexbox */
+  flex-direction: column; /* Sắp xếp theo chiều dọc */
+  height: 100%; /* Đảm bảo chiều cao của ul bằng với thanh nav */
+  justify-content: space-around; /* Các mục cách đều nhau theo chiều dọc */
+  align-items: center; /* Căn giữa các mục theo chiều ngang */
+}
+
+header nav ul li {
+  margin-bottom: 20px; /* Thêm khoảng cách giữa các mục */
+}
+
+header nav ul li:last-child {
+  margin-bottom: 0;
+}
+
+header nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  transition: color 0.2s ease;
+}
+
+header nav a:hover {
+  color: #666;
+}
+
+main {
+  margin-left: 20%; /* Đẩy nội dung sang phải bằng chiều rộng của thanh nav */
+  width: 80%; /* Nội dung chiếm 80% màn hình */
+  padding: 20px;
+}
+
 .hidden {
   display: none;
 }
@@ -22,38 +61,6 @@ header nav {
   display: block;
 }
 
-header nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: space-between;
-}
-
-header nav ul li {
-  margin-right: 20px;
-}
-
-header nav ul li:last-child {
-  margin-right: 0;
-}
-
-header nav a {
-  text-decoration: none;
-  color: #333;
-  transition: color 0.2s ease;
-}
-
-header nav a:hover {
-  color: #666;
-}
-header nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: space-around;
-}
 table {
   border-collapse: collapse;
   width: 100%;
@@ -69,6 +76,7 @@ td {
 th {
   background-color: #f0f0f0;
 }
+
 .btn-group {
   margin-top: 10px;
 }
@@ -95,10 +103,131 @@ th {
   background-color: #dc3545;
   color: #fff;
 }
+
 section {
   background-color: #fff;
   padding: 20px;
   margin-bottom: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
+}
+.selected {
+  background-color: #f8d7da; /* Màu nền đỏ nhạt */
+}
+/* Hộp thoại chỉnh sửa thông tin */
+#edit-dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Căn giữa */
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000; /* Đảm bảo hộp thoại ở trên overlay */
+  display: none; /* Ẩn hộp thoại mặc định */
+}
+
+#edit-dialog h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#edit-dialog label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+#edit-dialog input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+#edit-dialog .btn-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+#edit-dialog .btn {
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#edit-dialog .btn-primary {
+  background-color: #007bff;
+  color: white;
+}
+
+#edit-dialog .btn-danger {
+  background-color: #dc3545;
+  color: white;
+}
+
+/* Hiển thị hộp thoại khi cần */
+.show {
+  display: block;
+}
+
+/* Màn hình mờ khi hộp thoại hiển thị */
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Màu nền mờ */
+  z-index: 999; /* Đảm bảo overlay ở trên cùng */
+  display: none; /* Ẩn overlay mặc định */
+}
+#edit-dialog.show,
+#overlay.show {
+  display: block; /* Hiển thị khi thêm class "show" */
+}
+#edit-dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Căn giữa hộp thoại */
+  background-color: white;
+  padding: 30px; /* Thêm padding để hộp thoại rộng hơn */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000; /* Đảm bảo hộp thoại ở trên overlay */
+  width: 500px; /* Đặt chiều rộng hộp thoại */
+  max-width: 90%; /* Đảm bảo hộp thoại không vượt quá 90% chiều rộng màn hình */
+}
+
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Màu nền mờ */
+  z-index: 999; /* Đảm bảo overlay ở trên cùng */
+  display: none; /* Ẩn overlay mặc định */
+}
+
+#edit-dialog.show,
+#overlay.show {
+  display: block; /* Hiển thị khi thêm class "show" */
+}
+
+/* Thêm các hiệu ứng chuyển động cho hộp thoại */
+#edit-dialog {
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
